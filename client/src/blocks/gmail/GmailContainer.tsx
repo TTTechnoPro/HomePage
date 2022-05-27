@@ -57,7 +57,7 @@ const GmailContainer: React.FC = () => {
   const listMessages = useCallback(() => {
     setLoading(true)
     return gapi.client.gmail.users.messages
-      .list({ userId: userID, maxResults: 15, q: 'category: primary' })
+      .list({ userId: userID,'labelIds': 'INBOX', maxResults: 15})
       .then(
         res => {
           const messages = res.result.messages

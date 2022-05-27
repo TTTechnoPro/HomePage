@@ -3,7 +3,7 @@ const router = express.Router()
 const cors = require('cors')
 const axios = require('axios')
 
-const COUNTRYCODE = 'pt'
+const COUNTRYCODE = 'us'
 
 router.use(cors())
 

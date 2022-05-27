@@ -37,8 +37,8 @@ const MoviesContainer: React.FC<MoviesContainerProps> = ({ tvShows }) => {
     setMoviesLoading(true)
     const type = tvShows ? 'tv' : 'movie'
     const url = Number(selectedGenre)
-      ? `https://api.themoviedb.org/3/${type}/popular?page=${page}&with_genres=${selectedGenre}`
-      : `https://api.themoviedb.org/3/${type}/popular?page=${page}`
+      ? `https://api.themoviedb.org/3/${type}/popular?api_key=${MOVIES_KEY}&page=${page}&with_genres=${selectedGenre}`
+      : `https://api.themoviedb.org/3/${type}/popular?api_key=${MOVIES_KEY}&page=${page}`
     axios
       .get(url, { headers: { Authorization: `Bearer ${MOVIES_KEY}` } })
       .then(res => {
@@ -68,7 +68,7 @@ const MoviesContainer: React.FC<MoviesContainerProps> = ({ tvShows }) => {
   const fetchGenres = () => {
     setLoading(true)
     const type = tvShows ? 'tv' : 'movie'
-    const url = `https://api.themoviedb.org/3/genre/${type}/list`
+    const url = `https://api.themoviedb.org/3/genre/${type}/list?api_key=${MOVIES_KEY}`
     axios
       .get(url, { headers: { Authorization: `Bearer ${MOVIES_KEY}` } })
       .then(res => {

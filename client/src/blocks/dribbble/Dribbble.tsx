@@ -41,6 +41,7 @@ export const Dribbble: React.FC<DribbbleProps> = ({
                 <div
                   className="shot__img"
                   style={{ backgroundImage: `url(${shot.image})` }}
+                  // style={{ backgroundImage: `url(https://cdn.dribbble.com/users/1205252/screenshots/18067957/media/8e8d09a7d1fbbba5d92a53f5996e3241.jpg)` }}
                 >
                   <div className="shot__title">
                     <h3>{shot.title}</h3>
@@ -56,6 +57,7 @@ export const Dribbble: React.FC<DribbbleProps> = ({
                   <div
                     className="shot__author__img rotate-on-hover"
                     style={{ backgroundImage: `url(${shot.authorImage})` }}
+                    // style={{ backgroundImage: `url(https://cdn.dribbble.com/users/4835348/avatars/mini/b8d590e40a3593bb4cd14729373c0cf7.jpg?1616456581)` }}
                   ></div>
                   <h5 className="shot__author__name translate-right-on-hover">
                     {shot.authorName}

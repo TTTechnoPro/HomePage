@@ -24,10 +24,12 @@ router.get('/', (req, res) => {
         const authorImage = $(this)
           .find('.user-information img.photo')
           .attr('src')
+          console.log($(this).find('.userinformation img.photo'))
+          
         const authorUrl = $(this).find('.user-information a.url').attr('href')
         const title = $(this).find('.shot-title').text()
         const url = $(this).find('.dribbble-link').attr('href')
-        const image = $(this).find('picture source').attr('srcset')
+        const image = $(this).find('picture source').attr('data-srcset')
         dribbbleShots.push({
           authorName,
           authorImage,
@@ -41,7 +43,7 @@ router.get('/', (req, res) => {
       res.status(200).json(dribbbleShots)
     })
     .catch((err) => {
-      res.status(500).send('Erro retrieving Dribbble shots')
+      res.status(500).send('Error retrieving Dribbble shots')
     })
 })
 
@@ -68,7 +70,7 @@ router.get('/categories', (req, res) => {
       res.status(200).json(dribbbleCategories)
     })
     .catch((err) => {
-      res.status(500).send('Erro retrieving Dribbble categories')
+      res.status(500).send('Error retrieving Dribbble categories')
     })
 })
 
@@ -94,7 +96,7 @@ router.get('/:category', (req, res) => {
         const authorUrl = $(this).find('.user-information a.url').attr('href')
         const title = $(this).find('.shot-title').text()
         const url = $(this).find('.dribbble-link').attr('href')
-        const image = $(this).find('picture source').attr('srcset')
+        const image = $(this).find('js-thumbnail-placeholder').attr('data-srcset')
 
         dribbbleShots.push({
           authorName,
@@ -109,7 +111,7 @@ router.get('/:category', (req, res) => {
       res.status(200).json(dribbbleShots)
     })
     .catch((err) => {
-      res.status(500).send('Erro retrieving Dribbble shots')
+      res.status(500).send('Error retrieving Dribbble shots')
     })
 })
 

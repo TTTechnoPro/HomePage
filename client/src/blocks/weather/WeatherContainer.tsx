@@ -22,7 +22,7 @@ const WeatherContainer: React.FC = () => {
   const fetchData = useCallback(
     (position: any) => {
       setLoading(true)
-      const url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=${WEATHER_KEY}`
+      const url = `https://cors.bridged.cc/http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial&APPID=${WEATHER_KEY}`
       axios
         .get(url)
         .then(res => {

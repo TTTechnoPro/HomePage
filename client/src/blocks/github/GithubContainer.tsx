@@ -37,7 +37,7 @@ const GithubContainer: React.FC = () => {
             .then(response => {
               let notification: Notification = {
                 id: not.id,
-                date: not.last_read_at,
+                date: not.updated_at,
                 unread: not.unread,
                 reason: not.reason,
                 title: not.subject.title,
@@ -70,7 +70,8 @@ const GithubContainer: React.FC = () => {
           )
           setNotifications(newNotifications)
         })
-        .catch(err => console.log(err.response))
+        .catch(err => console.log(err.response))  
+
     }
   }
 

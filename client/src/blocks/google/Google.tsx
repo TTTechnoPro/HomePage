@@ -21,7 +21,7 @@ export const Google: React.FC<GoogleProps> = ({ submitSearch }) => {
         <div className="input-wrapper">
           <input
             type="text"
-            placeholder="Search on google"
+            placeholder="Search on Google"
             value={query}
             onChange={e => setQuery(e.target.value)}
           />

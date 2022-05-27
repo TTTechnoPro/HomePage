@@ -58,7 +58,7 @@ export const Gmail: React.FC<EmailProps> = ({
                 <div className="email__single__text">
                   <p>
                     <strong>{removeEmojisFromString(email.subject)} </strong>
-                    {email.snippet.substring(0, 120)}
+                    {email.snippet.substring(0, 120) + "..."}
                   </p>
                 </div>
               </div>
