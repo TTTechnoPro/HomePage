@@ -36,8 +36,6 @@ const WeatherContainer: React.FC = () => {
             icon: res.data.weather[0].icon
           }
           setData(dataObj)
-          localStorage.setItem('weather', JSON.stringify(dataObj))
-          localStorage.setItem('weather_stamp', getCurrentDate())
           setLoading(false)
           setError('')
         })
